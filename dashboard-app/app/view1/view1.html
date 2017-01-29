@@ -1,0 +1,82 @@
+<div class="content">
+            <div class="container-fluid">
+            <div class="row RefressBar">
+            	<div class="col-md-6 col-sm-12">
+            		<div class="col-md-3 col-sm-6"><h4>Refress Every :</h4> </div>
+            		<div class="col-md-3 col-sm-6">
+		            	<select class="form-control" ng-model="selectedInterval" ng-change="onChange(selectedInterval)">
+						      <option ng-repeat="x in refreshTimings" value="{{x.sec}}">{{x.time}}</option>
+		  				</select>
+  					</div>
+            	</div>
+            	
+            	
+            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Statistics</h4>
+                                <p class="category">LineChart View</p>
+                            </div>
+                            <div class="content">
+                               <line-chart data="Linechart"></line-chart>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Google Map</h4>                                
+                            </div>
+                            <div class="content">
+                               <div id="map"></div>
+                               <div id="class" ng-repeat="marker in markers | orderBy : 'title'">
+                                 <a href="#" ng-click="openInfoWindow($event, marker)">{{marker.title}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card ">
+                            <div class="header">
+                                <h4 class="title">Statistics</h4>
+                                <p class="category">Bar Chart View</p>
+                            </div>
+                            <div class="content">
+                                <bar-chart data="BarChart"></bar-chart>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card ">
+                            <div class="header">
+                                <h4 class="title">Statistics</h4>
+                                <p class="category">Pie Chart View</p>
+                            </div>
+                            <div class="content">
+                                <div class="piechart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+    
+
+        
+
+
+        
+
+
+        
+
+

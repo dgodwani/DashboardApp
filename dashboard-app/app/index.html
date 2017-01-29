@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.2.js"></script>
+   <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnZSTcJbqEcp3VyTcfQQH6y-vvc9U2hr4&sensor=false&extension=.js">
+    </script>
+    
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("visualization", "1", {
+        packages: ["corechart"]
+    });
+</script>
+  
+</head>
+<body>
+
+<div class="wrapper">
+
+  <div class="main-panel" ng-controller="DashboardCtrl">
+  <nav class="navbar navbar-default navbar-fixed">
+      <div class="container-fluid">
+           <div class="navbar-header">                    
+                <a class="navbar-brand col-md-6" href="#">Dashboard</a>
+                <div id="custom-search-input" class="col-md-6">
+                  <div class="input-group">
+                      <input type="text" class="form-control input-lg" placeholder="Search by Country Name" uib-typeahead="country as country.name for country in countries | filter:{name:$viewValue}" class="form-control" typeahead-show-hint="true" typeahead-min-length="0" ng-model="selected"/>                      
+                      <span class="input-group-btn">
+                          <button class="btn btn-info btn-lg" type="button">
+                              <i class="glyphicon glyphicon-search"></i>
+                          </button>
+                      </span>
+                  </div>  
+                </div>
+            </div> 
+      </div>      
+  </nav>
+  
+
+ 
+
+  <div ng-view></div>
+  </div>
+</div>
+
+   
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

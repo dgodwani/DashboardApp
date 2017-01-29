@@ -1,0 +1,15 @@
+<div class="line-chart" style="width:{{lineChartData.width}}px; height:{{lineChartData.height}}px;">
+	<div class="y" style="width:{{lineChartData.height}}px;">{{lineChartData.yAxis}}</div>
+
+	<div class="x">{{lineChartData.xAxis}}</div>
+							      
+	<svg style="width:{{lineChartData.width}}px; height:{{lineChartData.height}}px;">
+		 <line ng-repeat="line in lineChartData.data" 
+		 x1="{{$index / lineChartData.data.length * lineChartData.width }}" 
+		 y1="{{lineChartData.data[$index - 1].value / lineChartData.max * lineChartData.height}}" 
+		 x2="{{($index + 1) / lineChartData.data.length * lineChartData.width}}" 
+		 y2="{{line.value / lineChartData.max * lineChartData.height}}">
+		 </line>					       
+	</svg>						      					      						      
+							       
+</div>

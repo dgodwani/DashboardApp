@@ -1,0 +1,121 @@
+
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+
+.line-chart {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 60px auto;
+  position: relative;
+}
+.line-chart .y {
+  position: absolute;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  bottom: 0;
+  padding: 5px;
+}
+.line-chart .x {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 5px;
+}
+.line-chart svg {
+  position: absolute;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  left: 0;
+}
+.line-chart line {
+  stroke: red;
+  stroke-width: 3px;
+}
+
+.bar-chart {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 60px auto;
+  position: relative;
+  list-style: none;
+  padding: 0;
+}
+.bar-chart .y {
+  position: absolute;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+  bottom: 0;
+  padding: 5px;
+}
+.bar-chart .x {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 5px;
+}
+.bar-chart .bar {
+  background: blue;
+  position: absolute;
+  bottom: 0;
+}
+.bar-chart .bar:nth-of-type(even) {
+  background: red;
+}
+.bar-chart .bar span {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  -webkit-transform: rotate(-90deg) translateY(-50%);
+          transform: rotate(-90deg) translateY(-50%);
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  font-weight: bold;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+.bar-chart .bar:hover span {
+  opacity: 1;
+}
+
+#map {
+    height:420px;
+    width:600px;
+}
+.infoWindowContent {
+    font-size:  14px !important;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+h2 {
+    margin-bottom:0;
+    margin-top: 0;
+}

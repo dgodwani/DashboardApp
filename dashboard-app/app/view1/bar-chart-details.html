@@ -1,0 +1,7 @@
+<ul class="bar-chart" style="width:{{barChartData.width}}px; height:{{barChartData.height}}px;">
+      <!-- Labels -->
+      <div class="y" style="width:{{barChartData.height}}px;">{{barChartData.yAxis}}</div>
+      <div class="x">{{barChartData.xAxis}}</div>
+      <!-- Data -->
+       <li ng-repeat="bar in barChartData.data" class="bar" style="height:{{bar.value / barChartData.max * barChartData.height}}px; width:{{barChartData.width / barChartData.data.length - 5}}px; left:{{$index / barChartData.data.length * barChartData.width}}px;"><span>{{bar.label}}:{{bar.value}}</span></li>
+</ul>
